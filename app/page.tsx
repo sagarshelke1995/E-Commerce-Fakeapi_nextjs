@@ -6,6 +6,8 @@ import FilterBar from "@/components/FilterBar";
 import ProductGrid from "@/components/ProductGrid";
 import { Product } from "@/components/ProductCard";
 import debounce from "@/lib/debounce"; // extract debounce util
+import GridPattern from "@/components/GridPattern"
+import { BorderBeam } from "@/components/lightswind/border-beam"; 
 
 export default function Page() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -67,7 +69,11 @@ export default function Page() {
 
   return (
     <div className="max-w-7xl mx-auto min-h-screen p-4 md:p-8">
-      <h1 className="text-2xl font-bold mb-6">🛒 FakeStore Products</h1>
+      
+       <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
+                    <BorderBeam />
+                    <GridPattern title={{ name: "🛒 FakeStore Products" }} />
+                    </div>
       <FilterBar
         search={search}
         category={category}

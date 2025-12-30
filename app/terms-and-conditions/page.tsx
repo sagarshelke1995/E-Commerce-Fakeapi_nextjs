@@ -1,10 +1,16 @@
 import React from 'react'
 import { Typography } from "@/components/typography";
+import GridPattern from "@/components/GridPattern"
+import { BorderBeam } from "@/components/lightswind/border-beam"; 
 
 const page = () => {
   return (
     <>
-     <Typography className="max-w-5xl mx-auto md:my-12 p-3 md:px-16">
+   <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
+        <BorderBeam />
+        <GridPattern title={{ name: "Terms and Conditions" }} />
+   </div>
+   <Typography className="max-w-5xl mx-auto md:my-12 p-3 md:px-16">
    <div className="relative z-20 mx-auto text-center text-4xl font-bold">
    <div className="pb-14 px-6 md:px-20 grid">
       <div className="grid place-content-center sm:text-center gap-2">
@@ -78,7 +84,8 @@ const page = () => {
       <li>By visiting this page on our website: <a className="text-blue-600 underline" href="/contact-us">Contact Us</a></li>
    </ul>
 </article>
-</Typography>
+   </Typography>
+
     </>
   )
 }

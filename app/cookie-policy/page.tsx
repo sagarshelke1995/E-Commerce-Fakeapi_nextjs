@@ -1,9 +1,17 @@
 import React from 'react'
 import { Typography } from "@/components/typography";
+ import GridPattern from "@/components/GridPattern"
+                        import { BorderBeam } from "@/components/lightswind/border-beam"; 
 
 const page = () => {
   return (
     <> 
+    
+                        <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
+                            <BorderBeam />
+                              <GridPattern title={{ name: "Cookie" }} />
+                        </div>
+
      <Typography className="max-w-5xl mx-auto md:my-12 p-3 md:px-16">
        <div className="relative z-20 mx-auto text-center text-4xl font-bold">
        <div className="pb-14 px-6 md:px-20 grid">

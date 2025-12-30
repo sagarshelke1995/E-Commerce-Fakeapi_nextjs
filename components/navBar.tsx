@@ -13,6 +13,9 @@ const navItems: NavItem[] = [
   { href: "/", label: "home" },
   { href: "/about-us", label: "about" },
   { href: "/contact-us", label: "contact" },
+  { href: "/faq", label: "faq" },
+  { href: "/product", label: "products" },
+  { href: "/categories", label: "categories" },
 ]
 
 export default function Navbar({
@@ -23,7 +26,8 @@ export default function Navbar({
   const pathname = usePathname()
 
   return (
-    <div className="flex items-center gap-6">
+      <>
+    <div className="flex flex-col md:flex-row items-center gap-6">
       {navItems.map((item) => {
         const isActive = pathname === item.href
 
@@ -34,7 +38,7 @@ export default function Navbar({
             onClick={onLinkClick} // ✅ closes mobile menu
             aria-current={isActive ? "page" : undefined}
             className={clsx(
-              "relative group text-sm capitalize transition-colors",
+              "relative group font-semibold capitalize transition-colors",
               isActive
                 ? "text-primary"
                 : "text-muted-foreground hover:text-foreground"
@@ -51,5 +55,6 @@ export default function Navbar({
         )
       })}
     </div>
+  </>
   )
 }

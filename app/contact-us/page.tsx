@@ -1,5 +1,6 @@
 import ContactForm from "./ContactForm"
 import { BorderBeam } from "@/components/lightswind/border-beam"
+import GridPattern from "@/components/GridPattern"
 
 
 export const metadata = {
@@ -11,6 +12,12 @@ export const metadata = {
 export default function Page() {
   return (
     <>
+
+               <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
+                            <BorderBeam />
+                            <GridPattern title={{ name: "Get in Touch with MyStore" }} />
+                            </div>
+
     {/* Background Glow */}
     
 
