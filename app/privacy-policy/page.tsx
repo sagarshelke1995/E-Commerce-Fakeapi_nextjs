@@ -9,27 +9,14 @@ const page = () => {
       
                     <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
                         <BorderBeam />
-                       <GridPattern title={{ name: "Privacy Policy" }} />
+                       <GridPattern title="Privacy Policy"/>
                     </div>
 
      <Typography className="max-w-5xl mx-auto md:my-12 p-3 md:px-16">
-       <div className="relative z-20 mx-auto text-center text-4xl font-bold">
-       <div className="pb-14 px-6 md:px-20 grid">
-          <div className="grid place-content-center sm:text-center gap-2">
-             <h1 className="font-secondary text-3xl text-center max-w-md sm:max-w-3xl md:max-w-5xl sm:text-4xl font-medium md:text-4xl">
-               <span className='pr-1.5'>Privacy</span>
-               <span className="relative inline-flex w-max">
-                  <div className="pointer-events-none z-10 bg-[repeating-linear-gradient(45deg,_#00000066_0px,_#00000066_1px,_transparent_1px,_transparent_6px)] dark:bg-[repeating-linear-gradient(45deg,_#ffffff66_0px,_#ffffff66_1px,_transparent_1px,_transparent_6px)] absolute top-0 right-0 w-full h-full 100 !bg-background dark:!bg-gray-900 !z-0"></div>
-                  <span className="relative z-20 text-primary">Policy </span>
-               </span>  
-               </h1>
-             <p className="md:text-xl text-base sm:text-lg text-[13.5px] max-w-sm md:max-w-5xl text-center sm:mx-auto mt-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus velit quia natus quidem laboriosam amet eum dolores non alias veritatis? </p>
-          </div>
-       </div>
-    </div>
+      
 
     <article className="prose prose-indigo mx-auto w-full py-3">
-   <p>Last updated: September 20, 2021</p>
+   <p>Last updated: December 29, 2025</p>
    <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
    <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
    <h1>Interpretation and Definitions</h1>

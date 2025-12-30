@@ -11,7 +11,6 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -33,7 +32,6 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
 
-          {/* LOGO */}
           <Link
             href="/"
             className="flex items-center gap-2 font-bold text-xl"
@@ -44,7 +42,7 @@ export default function Header() {
             <span className="hidden sm:block">MyStore</span>
           </Link>
 
-          {/* DESKTOP */}
+    
           <div className="hidden md:flex items-center gap-6">
             <NavBar />
 
@@ -61,7 +59,7 @@ export default function Header() {
             <ThemeToggle />
           </div>
 
-          {/* MOBILE ACTIONS */}
+      
           <div className="flex items-center gap-2 md:hidden">
             <ThemeToggle />
 
@@ -85,7 +83,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+  
       <div
         ref={menuRef}
         className={`absolute left-0 right-0 top-full z-40 transition-all duration-300 ease-out md:hidden
@@ -93,11 +91,7 @@ export default function Header() {
       >
         <div className="mx-3 mt-2 rounded-2xl border border-border bg-background shadow-xl backdrop-blur-lg">
           <div className="flex flex-col gap-3 p-4">
-
-            {/* NAV LINKS */}
             <NavBar onLinkClick={() => setOpen(false)} />
-
-            
           </div>
         </div>
       </div>

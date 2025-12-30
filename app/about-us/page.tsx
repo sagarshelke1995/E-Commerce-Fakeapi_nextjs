@@ -8,7 +8,7 @@ const page = () => {
       {/* Header Card */}
       <div className="relative w-full max-w-4xl mx-auto border bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 rounded-2xl mt-16 overflow-hidden">
         <BorderBeam />
-        <GridPattern title={{ name: "Welcome to MyStore" }} />
+         <GridPattern title="Welcome to MyStore" />
       </div>
 
       {/* Content */}

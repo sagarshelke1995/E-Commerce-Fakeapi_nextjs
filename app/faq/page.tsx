@@ -55,34 +55,23 @@ export default function FAQPage() {
     <>
       <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
         <BorderBeam />
-        <GridPattern title={{ name: "Frequently Asked Questions" }} />
+        <GridPattern title="Frequently Asked Questions" />
       </div>
     
   
-    <div className="max-w-5xl mx-auto md:my-12 p-3 md:px-16">
-      
-      {/* Page Heading */}
-      <div className="text-center py-10">
-        <h1 className="text-3xl md:text-4xl font-bold mb-3">
-          Frequently Asked Questions
-        </h1>
-        <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
-          Have questions? Find answers to common queries about shopping, shipping, returns, and more at MyStore.
-        </p>
-      </div>
-
+    <div className="max-w-5xl mx-auto p-3 md:px-16">
       {/* FAQ List */}
       <div className="space-y-4 mt-10">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="rounded-xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-sm hover:shadow-md transition"
+            className="rounded-xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-sm hover:shadow-md transition "
           >
             <button
               onClick={() =>
                 setOpenIndex(openIndex === index ? null : index)
               }
-              className="flex w-full items-center justify-between px-5 py-4 text-left focus:outline-none"
+              className="flex w-full items-center justify-between px-5 py-4 text-left focus:outline-none cursor-pointer"
             >
               <span className="text-base font-medium text-gray-900 dark:text-gray-100">
                 {faq.question}

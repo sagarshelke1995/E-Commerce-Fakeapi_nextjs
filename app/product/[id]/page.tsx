@@ -2,7 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import {Lens} from "@/components/ui/lens"
 import GridPattern from "@/components/GridPattern"
-        import { BorderBeam } from "@/components/lightswind/border-beam"; 
+ import { BreadcrumbBar } from "@/components/BreadcrumbBar"; 
 
 interface Rating {
   rate: number;
@@ -28,6 +28,8 @@ interface PageProps {
 export default async function ProductDetails({ params }: PageProps) {
   const { id } = await params;
 
+ 
+
   if (!id || isNaN(Number(id))) {
     notFound();
   }
@@ -37,19 +39,26 @@ export default async function ProductDetails({ params }: PageProps) {
     { cache: "no-store" }
   );
 
+
   if (!res.ok) {
     notFound();
   }
 
-  const product: Product = await res.json();
+  let product: Product;
+
+try {
+  product = await res.json();
+} catch (error) {
+  notFound();
+}
 
   return (
     <>
- 
         <div className="min-h-screen bg-gray-50 dark:bg-zinc-950 px-4 py-8 md:py-12">
+          <BreadcrumbBar id={id}/>
           <div className="max-w-5xl mx-auto bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-3xl shadow-sm p-6 md:p-8 grid md:grid-cols-2 gap-8">
 
-            {/* IMAGE */}
+        
               {/* IMAGE WITH LENS */}
         <div className="flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-2xl p-6">
         <Lens zoomFactor={2} lensSize={180}>

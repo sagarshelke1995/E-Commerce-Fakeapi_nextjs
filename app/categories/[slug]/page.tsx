@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation"; 
 import { getProductsByCategory } from "@/app/actions/categoryActions";
 import ProductCard from "@/components/ProductCard";
+import GridPattern from "@/components/GridPattern"
+                import { BorderBeam } from "@/components/lightswind/border-beam"; 
 
 interface PageProps {
   params: Promise<{ slug: string }>; // mark params as Promise
@@ -13,8 +15,13 @@ export default async function CategoryPage({ params }: PageProps) {
   const products = await getProductsByCategory(slug);
 
   return (
+    <>
+     <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
+                        <BorderBeam />
+                      <GridPattern title= {slug.toUpperCase()} />
+                    </div>
+ 
     <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">{slug.toUpperCase()}</h1>
       {products.length === 0 ? (
         <p>No products found in this category.</p>
       ) : (
@@ -25,5 +32,6 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       )}
     </div>
+       </>
   );
 }

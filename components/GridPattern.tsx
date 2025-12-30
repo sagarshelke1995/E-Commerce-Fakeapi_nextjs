@@ -1,21 +1,11 @@
 import React from 'react'
 
+type GridPatternProps = {
+  title: string;
+};
 
-export default function GridPattern({ title }) {
-     const placeholders = [
-    "Enter zip..... 50112",
-    "Wnter City .... Alabama",
-    "Enter zip..... 442001",
-    "Wnter City .... Wardha",
-  ];
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-  };
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("submitted");
-  };
+export default function GridPattern({ title }: GridPatternProps) {
+  
   return (
     <>
           <div className="p-10 group/file block rounded-lg w-full relative overflow-hidden">
@@ -23,12 +13,9 @@ export default function GridPattern({ title }) {
               <GridPatternBox />
             </div>
             <div className="flex flex-col items-center justify-center">
-              <h1 className="relative z-20 font-sans font-bold text-neutral-700 dark:text-neutral-300 text-3xl">
-                 {title.name}
+              <h1 className="text-center relative z-20 font-sans font-bold text-neutral-700 dark:text-neutral-300 text-3xl">
+                 {title}
               </h1>
-              <div className="mt-5 w-full">
-                    
-              </div>
             </div>
           </div>
     </>

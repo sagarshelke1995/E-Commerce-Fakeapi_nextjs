@@ -33,7 +33,6 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-t from-gray-100 to-gray-50 dark:from-zinc-900 dark:to-zinc-800 text-gray-900 dark:text-white pt-12">
       <div className="mx-auto max-w-7xl px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 gap-10">
-        {/* Brand & Description */}
         <div className="md:col-span-2">
           <Link href="/" className="text-3xl font-bold tracking-tight">
             <AuroraTextEffect
@@ -67,12 +66,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Footer Links */}
         {footerLinks.map((section) => (
           <div key={section.title}>
-            <h4 className="mb-4 font-semibold text-lg border-b border-gray-300 dark:border-gray-600 pb-1">
+            <div className="mb-4 font-semibold text-lg border-b border-gray-300 dark:border-gray-600 pb-1">
               {section.title}
-            </h4>
+            </div>
             <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
               {section.links.map((link) => (
                 <li key={link.href}>
@@ -86,7 +84,6 @@ export default function Footer() {
         ))}
       </div>
 
-      {/* Bottom Bar */}
       <div className="mt-12 border-t border-gray-300 dark:border-gray-700 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
         © {new Date().getFullYear()} MyStore. All rights reserved.
       </div>

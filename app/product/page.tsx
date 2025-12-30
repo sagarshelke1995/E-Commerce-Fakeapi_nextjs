@@ -68,14 +68,14 @@ export default function Page() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="max-w-7xl mx-auto min-h-screen p-4 md:p-8">
-
+    <>
     
     <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
         <BorderBeam />
-       <GridPattern title={{ name: "🛒 FakeStore Products" }} />
+       <GridPattern title="🛒 FakeStore Products" />
     </div>
 
+      <div className="max-w-7xl mx-auto min-h-screen p-4 md:p-8">
       <FilterBar
         search={search}
         category={category}
@@ -91,5 +91,6 @@ export default function Page() {
       <ProductGrid products={paginated} loading={loading} />
       <PaginationControl page={page} totalPages={totalPages} onPageChange={setPage} />
     </div>
+    </>
   );
 }

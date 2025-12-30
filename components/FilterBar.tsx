@@ -18,7 +18,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
   onSearch, onCategoryChange, onSortChange, onRatingChange,
 }) => {
   return (
-    <div className="bg-white dark:bg-zinc-900 rounded-2xl p-4 shadow mb-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div className="bg-white dark:bg-zinc-900 rounded-2xl p-4 shadow mb-6 grid grid-cols-2 md:grid-cols-4 gap-4">
       <input
         value={search}
         placeholder="Search products..."
@@ -29,6 +29,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
         value={category}
         onChange={(e) => onCategoryChange(e.target.value)}
         className="border border-gray-300 dark:border-zinc-700 rounded-full px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+        aria-label="category"
       >
         <option value="all">All Categories</option>
         {categories.map((c) => <option key={c} value={c}>{c}</option>)}
@@ -37,6 +38,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
         value={sort}
         onChange={(e) => onSortChange(e.target.value)}
         className="border border-gray-300 dark:border-zinc-700 rounded-full px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+         aria-label="sort"
       >
         <option value="">Sort By</option>
         <option value="price-asc">Price: Low → High</option>
@@ -48,6 +50,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
         value={minRating}
         onChange={(e) => onRatingChange(Number(e.target.value))}
         className="border border-gray-300 dark:border-zinc-700 rounded-full px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+         aria-label="rating"
       >
         <option value={0}>All Ratings</option>
         <option value={3}>⭐ 3+</option>

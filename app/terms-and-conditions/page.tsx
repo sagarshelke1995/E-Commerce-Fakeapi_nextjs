@@ -8,18 +8,9 @@ const page = () => {
     <>
    <div className="relative w-full max-w-4xl mx-auto border  bg-white dark:bg-neutral-700 border-neutral-200 dark:border-neutral-800 rounded-lg mt-16">
         <BorderBeam />
-        <GridPattern title={{ name: "Terms and Conditions" }} />
+        <GridPattern title= "Terms and Conditions"/>
    </div>
    <Typography className="max-w-5xl mx-auto md:my-12 p-3 md:px-16">
-   <div className="relative z-20 mx-auto text-center text-4xl font-bold">
-   <div className="pb-14 px-6 md:px-20 grid">
-      <div className="grid place-content-center sm:text-center gap-2">
-         <h1 className="font-secondary text-3xl text-center max-w-md sm:max-w-3xl md:max-w-5xl sm:text-4xl font-medium md:text-4xl"> Terms and Conditions </h1>
-         <p className="md:text-xl text-base sm:text-lg text-[13.5px] max-w-sm md:max-w-5xl text-center sm:mx-auto mt-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus velit quia natus quidem laboriosam amet eum dolores non alias veritatis? </p>
-      </div>
-   </div>
-</div> 
-
 <article className="prose prose-sm md:prose-lg mx-auto prose-indigo text-justify space-y-5">
    <p>Please read these terms and conditions carefully before using Our Service.</p>
    <h2>Interpretation and Definitions</h2>
