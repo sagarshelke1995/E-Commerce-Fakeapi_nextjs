@@ -1,102 +1,87 @@
-import Link from "next/link"
-import { Facebook, Twitter, Instagram, Github } from "lucide-react"
+import Link from "next/link";
+import { Facebook, Twitter, Instagram, Github } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-linear-to-b from-background to-muted/30 pt-10">
-      <div className="mx-auto grid max-w-7xl grid-cols-3 gap-5 px-6 md:grid-cols-5 md:gap-12 md:px-12">
+    <footer className="bg-gradient-to-t from-zinc-900 to-zinc-800 text-white pt-12">
+      
+      <div className="mx-auto max-w-7xl px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 gap-10">
         
-        {/* Brand */}
-        <div className="col-span-3 md:col-span-3">
-          <Link
-            href="/"
-            className="text-2xl font-bold tracking-tight text-foreground"
-          >
-            MyApp
+        {/* Brand & Description */}
+        <div className="md:col-span-2">
+          <Link href="/" className="text-3xl font-bold tracking-tight">
+            MyStore
           </Link>
-
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            A modern platform built with Next.js, shadcn UI, and Tailwind CSS.
+          <p className="mt-3 max-w-sm text-sm text-gray-300">
+            Your one-stop shop for modern products. Built with Next.js, Tailwind CSS & shadcn UI.
           </p>
+          <div className="flex mt-4 gap-3">
+            {[Facebook, Twitter, Instagram, Github].map((Icon, i) => (
+              <Link
+                key={i}
+                href="#"
+                aria-label={`social-${i}`}
+                className="rounded-full border border-gray-600 p-2 hover:bg-indigo-600 hover:border-indigo-500 transition"
+              >
+                <Icon className="h-5 w-5" />
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Navigation */}
         <div>
-          <h4 className="mb-3 border-b pb-1.5 text-sm font-semibold text-foreground dark:border-neutral-500 md:text-lg">
-            Navigation
+          <h4 className="mb-4 font-semibold text-lg border-b border-gray-700 pb-1">
+            Shop
           </h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <ul className="space-y-2 text-sm text-gray-300">
             <li>
-              <Link href="/" className="hover:text-primary transition-colors">
-                Home
-              </Link>
+              <Link href="/" className="hover:text-indigo-500 transition">Home</Link>
             </li>
             <li>
-              <Link href="/about-us" className="hover:text-primary transition-colors">
-                About
-              </Link>
+              <Link href="/about-us" className="hover:text-indigo-500 transition">About Us</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Customer Service */}
+        <div>
+          <h4 className="mb-4 font-semibold text-lg border-b border-gray-700 pb-1">
+            Support
+          </h4>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li>
+              <Link href="/contact-us" className="hover:text-indigo-500 transition">Contact</Link>
             </li>
             <li>
-              <Link href="/contact-us" className="hover:text-primary transition-colors">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link href="/faq" className="hover:text-primary transition-colors">
-                FAQ
-              </Link>
+              <Link href="/faq" className="hover:text-indigo-500 transition">FAQ</Link>
             </li>
           </ul>
         </div>
 
         {/* Legal */}
         <div>
-          <h4 className="mb-3 border-b pb-1.5 text-sm font-semibold text-foreground dark:border-neutral-500 md:text-lg">
+          <h4 className="mb-4 font-semibold text-lg border-b border-gray-700 pb-1">
             Legal
           </h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <ul className="space-y-2 text-sm text-gray-300">
             <li>
-              <Link href="/privacy-policy" className="hover:text-primary transition-colors">
-                Privacy Policy
-              </Link>
+              <Link href="/privacy-policy" className="hover:text-indigo-500 transition">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/terms-and-conditions" className="hover:text-primary transition-colors">
-                Terms & Conditions
-              </Link>
+              <Link href="/terms-and-conditions" className="hover:text-indigo-500 transition">Terms & Conditions</Link>
             </li>
             <li>
-              <Link href="/cookie-policy" className="hover:text-primary transition-colors">
-                Cookies
-              </Link>
+              <Link href="/cookie-policy" className="hover:text-indigo-500 transition">Cookie Policy</Link>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Bottom */}
-      <div className="mt-6 border-t border-muted-foreground/20 px-5 py-6">
-        <div className="mx-auto md:flex max-w-7xl items-center justify-between">
-          
-          <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} MyApp. All rights reserved.
-          </p>
-
-          <div className="mt-5 flex justify-center gap-4 md:mt-0">
-            {[Facebook, Twitter, Instagram, Github].map((Icon, i) => (
-              <Link
-                key={i}
-                href="#"
-                aria-label={`social-${i}`}
-                className="rounded-full border border-border p-2 transition-all hover:border-primary hover:bg-primary/10"
-              >
-                <Icon className="h-4 w-4 text-foreground" />
-              </Link>
-            ))}
-          </div>
-
-        </div>
+      {/* Bottom Bar */}
+      <div className="mt-12 border-t border-gray-700 py-6 text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} MyStore. All rights reserved.
       </div>
     </footer>
-  )
+  );
 }

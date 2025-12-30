@@ -31,7 +31,7 @@ export default function Navbar({
           <Link
             key={item.href}
             href={item.href}
-            onClick={onLinkClick}
+            onClick={onLinkClick} // ✅ closes mobile menu
             aria-current={isActive ? "page" : undefined}
             className={clsx(
               "relative group text-sm capitalize transition-colors",
@@ -41,8 +41,6 @@ export default function Navbar({
             )}
           >
             {item.label}
-
-            {/* underline */}
             <span
               className={clsx(
                 "absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300",
