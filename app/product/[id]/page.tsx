@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import {Lens} from "@/components/ui/lens"
 
 interface Rating {
   rate: number;
@@ -45,16 +46,18 @@ export default async function ProductDetails({ params }: PageProps) {
       <div className="max-w-5xl mx-auto bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-3xl shadow-sm p-6 md:p-8 grid md:grid-cols-2 gap-8">
 
         {/* IMAGE */}
-        <div className="flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-2xl p-6">
-          <Image
-            src={product.image}
-            alt={product.title}
-            width={400}
-            height={400}
-            priority
-            className="object-contain h-80 w-full"
-          />
-        </div>
+          {/* IMAGE WITH LENS */}
+    <div className="flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-2xl p-6">
+     <Lens zoomFactor={2} lensSize={180}>
+  <Image
+    src={product.image}
+    alt={product.title}
+    width={400}
+    height={400}
+    className="object-contain h-80 w-full rounded-2xl"
+  />
+</Lens>
+    </div>
 
         {/* DETAILS */}
         <div className="flex flex-col">
